@@ -1,2 +1,2 @@
 # piramide
-Het piramide systeem vanvollido
+Het piramide systeem van . vollido
