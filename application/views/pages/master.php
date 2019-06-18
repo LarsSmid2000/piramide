@@ -15,7 +15,7 @@
 </head>
 
 <body ng-app="myApp" ng-controller="masterCtrl">
-  <div ng-if="user">
+  <div>
     <!------[NAVBAR]------>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Navbar</a>
@@ -33,24 +33,7 @@
         </ul>
       </div>
     </nav>
-    <div ng-if="user" ng-view ></div>
-  </div>
-  <!----- LOGIN ------>
-  <div ng-if="!user">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-3">
-          <form class="form-signin" ng-submit="doLogin(loginData)">
-            <h2 class="form-signin-heading">Please sign in</h2>
-              <label for="inputEmail" class="sr-only">Email address</label>
-              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" ng-model="loginData.username">
-              <label for="inputPassword" class="sr-only">Password</label>
-              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" ng-model="loginData.password">
-              <button class="btn btn-lg btn-primary btn-block mt-2" type="submit">Sign in</button>
-          </form>
-        </div>
-      </div>
-    </div>
+    <div ng-view ></div>
   </div>
 </body>
 </html>
