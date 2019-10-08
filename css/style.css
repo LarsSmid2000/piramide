@@ -1,6 +1,12 @@
 body {
-	background-color: #f3f3f3;
+	background-image: url("/images/bg.jpg");
 	background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+}
+.pull-right {
+	float: right;
+}
+.pointer {
+	cursor: pointer;
 }

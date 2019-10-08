@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Backoffice</title>
+	<title>Piramide</title>
 	<!-------[Bootstap style]-------->
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
@@ -11,14 +11,21 @@
 	<!-------[Angular JS]------->
 	<script type="text/javascript" src="/js/angular.js"></script>
 	<script type="text/javascript" src="/js/angular-route.js"></script>
-	<script type="text/javascript" src="/js/script.js"></script>
+
+  <!-------[Font awesome]------->
+  <script src="https://kit.fontawesome.com/eab76416a5.js" crossorigin="anonymous"></script>
+	
+  <!-------[Own JS]------->
+  <script type="text/javascript" src="/js/script.js"></script>
+  <script type="text/javascript" src="/js/user.js"></script>
+  <script type="text/javascript" src="/js/home.js"></script>
 </head>
 
 <body ng-app="myApp" ng-controller="masterCtrl">
   <div>
     <!------[NAVBAR]------>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Navbar</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Vollido</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

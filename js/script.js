@@ -7,6 +7,7 @@ app.config(function($routeProvider) {
     })
     .when("/home", {
         templateUrl : "/page/view/home",
+        controller : "homeCtrl"
     })
     .when("/user", {
         templateUrl : "/page/view/user",
@@ -20,21 +21,4 @@ app.controller("masterCtrl", function ($scope) {
         console.log("do login");
         console.log(data);
    }
-});
-
-//home controller
-app.controller("homeCtrl", function ($scope, $http) {
-    $http({
-        method : "GET",
-        url : "user/getUsers"
-    }).then(function mySuccess(response) {
-        console.log(response);
-    }, function myError(response) {
-        //error
-    });
-});
-
-//user controller
-app.controller("userCtrl", function ($scope) {
-   
 });
