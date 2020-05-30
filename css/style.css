@@ -10,3 +10,12 @@ body {
 .pointer {
 	cursor: pointer;
 }
+.time-row {
+	padding: 20px 0;
+    border-bottom: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
+    min-height: 145px;
+}
+.time-row-border-right {
+	border-right: 1px solid #e5e5e5;
+}

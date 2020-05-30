@@ -5,6 +5,7 @@ class MY_Model extends CI_Model {
 	public function __construct(){
       	parent::__construct();
     	// Your own constructor code
+    	
     }
     /*
      ** Function to get 1 array or array in a array
@@ -13,6 +14,15 @@ class MY_Model extends CI_Model {
     	$this->returnAsMany = $bool;
     }
     
+	/*
+     ** Function to get 1 array or array in a array
+    */
+    public function setSelectedFields($fields){
+    	if(isset($fields) && is_array($fields)){
+    		$this->selectedFields = implode(', ', $fields);
+    	}
+     }
+
     /*
      ** Function to filter array
     */
@@ -28,7 +38,19 @@ class MY_Model extends CI_Model {
 		*/
 		$this->where = $filter;
     }
-
+    /*
+     ** Function to set order
+    */
+    public function setOrderBy($order){
+    	/*
+    	Format:
+    	array(
+			'field' => 'name',
+			'order' => 'DESC or ASC',
+		),
+		*/
+		$this->orderBy = $order;
+    }
     /*
      ** Function to get count
     */
@@ -48,14 +70,27 @@ class MY_Model extends CI_Model {
 	/*
      ** Function to get all items
     */
-    public function get(){
+    public function get($id){
     	//set where if isset
     	if(isset($this->where) && (count($this->where) > 0)){
     		foreach($this->where as $filter){
 				$this->db->where($filter['field'], $filter['data']);
 	    	}
     	}
-    	
+    	//set selected fields if isset
+    	if(isset($this->selectedFields) && strlen($this->selectedFields)){
+    		$this->db->select($this->selectedFields);
+    	}
+    	//set order by if isset
+    	if(isset($this->orderBy) && is_array($this->orderBy)){
+    		$this->db->order_by($this->orderBy['field'] . ' ' . $this->orderBy['order']);
+    	}
+
+    	if($id != null){
+			$this->db->where('id', $id);
+			$this->returnAsMany = false;
+    	}
+    	//$this->db->select('username');
 		$query = $this->db->get($this->table);
 		if(isset($this->returnAsMany) && $this->returnAsMany){
 			//return array in a array
@@ -78,7 +113,15 @@ class MY_Model extends CI_Model {
 				$this->db->where($filter['field'], $filter['data']);
 	    	}
     	}
-    	
+    	//set selected fields if isset
+    	if(isset($this->selectedFields) && strlen($this->selectedFields)){
+    		$this->db->select($this->selectedFields);
+    	}
+    	//set order by if isset
+    	if(isset($this->orderBy) && is_array($this->orderBy)){
+    		$this->db->order_by($this->orderBy['field'] . ' ' . $this->orderBy['order']);
+    	}
+
 		$query = $this->db->get($this->table);
 		if(isset($this->returnAsMany) && $this->returnAsMany){
 			//return array in a array

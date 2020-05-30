@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => 'LarsSmid',
-	'database' => 'piramide',
+	'hostname' => 'db.clubhuisvollido.nl',
+	'username' => 'md512850db509970',
+	'password' => 'Piramide1!',
+	'database' => 'md512850db509970',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
